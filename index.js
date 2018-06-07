@@ -8,6 +8,10 @@
 
   var port = process.env.PORT || 3000
 
+  // parse application/x-www-form-urlencoded
+  //app.use(bodyParser.urlencoded())
+
+  // parse application/json
   app.use(bodyParser.json())
 
   app.listen(port)
@@ -24,11 +28,13 @@
         var conf = {
             "host": req.body.ip,
             "port": 8082,
+            "password": '',
+            "enpassword": ''
         };
 
   meo(conf,function(err, api) {
       if (err) { 
-        console.log('error: '+ error);
+        console.log('error: '+ err);
         return console.error(err); 
         api.close();
       }
@@ -47,4 +53,4 @@
     }
 
     console.log('Listening for Command on ' + port)
-  });
+  })
