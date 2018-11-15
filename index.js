@@ -49,7 +49,7 @@
     } else {
       console.log('error 500');
 
-      res.status(500).send('Error on parsing command testing ipad development env.')
+      res.status(500).send('Error on parsing command testing ipad development environment')
     }
 
     console.log('Listening for Command on ' + port)
