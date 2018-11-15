@@ -21,7 +21,8 @@
 
   app.post("/", function (req, res) {
     console.log(req.body)
-
+    console.log( req.body.secret === process.env.secret)
+    console.log(process.env.secret)
     if(req.body.action && req.body.secret === process.env.secret) {
 
       res.status(200).send('success')
